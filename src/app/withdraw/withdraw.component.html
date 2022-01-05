@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00488E;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/Images/2560px-Federal_bank_India.svg.jpg" alt="" width="200" height="50">
+        </a>
+        <span class="navbar-text ps-2 text-white">
+            KPD Building, Olavakkode Main Rd, <br>
+            Olavakode, Palakkad, <br>
+            Kerala 678002
+        </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <a class="nav-link text-white" aria-current="page" href="#">Personal</a>
+            <a class="nav-link text-white" href="#">Corporate</a>
+            <a class="nav-link text-white" href="#">Business</a>
+            <a class="nav-link text-white" href="#">Tenders</a>
+            <a class="nav-link text-white" href="#">FAQs</a>
+            <a class="nav-link text-white" href="#">ContactUs</a>
+            <!-- <i class="fas fa-user-circle fa-2x"></i> -->
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()"> 
+        <fieldset class="form-group border border-dark p-3">
+            <legend class="w-auto mb-3">Cash Withdrawal</legend>
+        
+            <div class="mb-3">
+                <label for="accnmbr" class="form-label fw-bold">Account Number:<span class="required">*</span></label>
+                <input type="text" class="form-control" name="acno" formControlName="acno" id="accnmbr" required>
+            </div>
+            <div *ngIf="(this.withdrawForm.get('acno')?.touched||this.withdrawForm.get('acno')?.dirty)&&this.withdrawForm.get('acno')?.errors" class="error">
+                Invalid Account Number
+            </div>
+            <div class="mb-3">
+                <label for="Password" class="form-label fw-bold">Password:<span class="required">*</span></label>
+                <input type="password" class="form-control" name="pwd" formControlName="pwd" id="Password" required>
+            </div>
+            <div *ngIf="(this.withdrawForm.get('pwd')?.touched||this.withdrawForm.get('pwd')?.dirty)&&this.withdrawForm.get('pwd')?.errors" class="error">
+                Invalid Password
+            </div>
+            <div class="mb-3">
+                <label for="amt" class="form-label fw-bold">Amount:<span class="required">*</span></label>
+                <input type="text" class="form-control" name="amt" formControlName="amt" id="amt" required>
+            </div>
+            <div *ngIf="(this.withdrawForm.get('amt')?.touched||this.withdrawForm.get('amt')?.dirty)&&this.withdrawForm.get('amt')?.errors" class="error">
+                Invalid Amount
+            </div>
+            <button type="submit" class="btn btn-primary">WITHDRAW</button>
+            <!-- <a href="login" class="link-danger fs-5 ps-3">Already signed</a> -->
+            <!-- <button type="submit" class="btn btn-danger" (click)="login()">Already Login</button> -->
+        </fieldset>
+    </form>
+</div>
+
+
+<!-- Footer -->
+<footer style="padding-top: 100px;" class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-4 fw-bold">© 2021 Copyright
+        <a href="https://www.federalbank.co.in/"> federalbank.co.in</a>
+    </div>
+</footer>

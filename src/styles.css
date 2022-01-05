@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,700;1,700&display=swap');
+body{
+    background-image: url(./assets/Images/annie-spratt-yI3weKNBRTc-unsplash.jpg);
+    background-size: cover;
+}
+span{
+    font-size: small;
+}
+.container{
+    margin-top: 180px;
+}
+.required{
+    color: red;
+}
+
+
+

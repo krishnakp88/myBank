@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00488E;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/Images/2560px-Federal_bank_India.svg.jpg" alt="" width="200" height="50">
+        </a>
+        <span class="navbar-text ps-2 text-white">
+            KPD Building, Olavakkode Main Rd, <br>
+            Olavakode, Palakkad, <br>
+            Kerala 678002
+        </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <a class="nav-link text-white" aria-current="page" href="#">Personal</a>
+            <a class="nav-link text-white" href="#">Corporate</a>
+            <a class="nav-link text-white" href="#">Business</a>
+            <a class="nav-link text-white" href="#">Tenders</a>
+            <a class="nav-link text-white" href="#">FAQs</a>
+            <a class="nav-link text-white" href="#">ContactUs</a>
+            <!-- <i class="fas fa-user-circle fa-2x"></i> -->
+        </div>
+    </div>
+</nav>
+
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <img src="../../assets/Images/fed1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../assets/Images/fed2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../assets/Images/fed3.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<p> {{aim}} </p>
+<div id="hyper" class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <fieldset class="form-group border border-dark p-3">
+            <legend class="w-auto mb-3">User Login</legend>
+            <div class="mb-3 mt-2">
+                <input type="text" class="form-control" id="usr_accnmbr" name="acno" formControlName="acno" [placeholder]="target" required> 
+                <!-- (change)="acnoChange($event)" -->
+                <div *ngIf="(this.loginForm.get('acno')?.touched||this.loginForm.get('acno')?.dirty)&&this.loginForm.get('acno')?.errors" class="error">
+                    Invalid Account Number
+                </div>
+                <input type="password" class="form-control mt-3" id="usr_pswd" name="pwd" formControlName="pwd" placeholder="Password" required>
+                <!-- (change)="pwdChange($event)" -->
+                <div *ngIf="(this.loginForm.get('pwd')?.touched||this.loginForm.get('pwd')?.dirty)&&this.loginForm.get('pwd')?.errors" class="error">
+                    Invalid Password
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" type="submit">LOGIN</button>
+                <button class="btn btn-danger" type="submit">CANCEL</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div id="hyper" class="container">
+    <div class="row">
+        <div class=""></div>
+        <div class="col-sm text-center">
+            <a href="register" class="link-primary fs-5">New User?Register Here</a>
+        </div>
+        <div class=""></div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer style="padding-top: 200px;" class="page-footer font-small blue">
+    <div class="footer-copyright text-center fw-bold">© 2021 Copyright
+        <a href="https://www.federalbank.co.in/"> federalbank.co.in</a>
+    </div>
+</footer>

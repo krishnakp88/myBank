@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00488E;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/Images/2560px-Federal_bank_India.svg.jpg" alt="" width="200" height="50">
+        </a>
+        <span class="navbar-text ps-2 text-white">
+            KPD Building, Olavakkode Main Rd, <br>
+            Olavakode, Palakkad, <br>
+            Kerala 678002
+        </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <a class="nav-link text-white" aria-current="page" href="#">Personal</a>
+            <a class="nav-link text-white" href="#">Corporate</a>
+            <a class="nav-link text-white" href="#">Business</a>
+            <a class="nav-link text-white" href="#">Tenders</a>
+            <a class="nav-link text-white" href="#">FAQs</a>
+            <a class="nav-link text-white" href="#">ContactUs</a>
+            <!-- <i class="fas fa-user-circle fa-2x"></i> -->
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    
+    <form [formGroup]="registerForm" (ngSubmit)="register()"> 
+        <fieldset class="form-group border border-dark p-3">
+            <legend class="w-auto mb-3">New User Registration</legend>
+            <div class="mb-3">
+                <label for="fname" class="form-label fw-bold">Full Name:<span class="required">*</span></label>
+                <input type="text" class="form-control" id="fname" name="fname" formControlName="fname" placeholder="Enter Your Full Name" required>
+            </div>
+        <div *ngIf="(this.registerForm.get('fname')?.touched||this.registerForm.get('fname')?.dirty)&&this.registerForm.get('fname')?.errors" class="error">
+                Invalid Username
+            </div>
+
+            <div class="mb-3">
+                <label for="acctype" class="form-label fw-bold">Account Type:<span class="required">*</span></label>
+                <select class="form-select" id="acctype" aria-label="Default select example" required>
+                    <option selected>Select Account Type</option>
+                    <option value="Savings">Savings</option>
+                    <option value="Current" name="Current">Current</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="accnmbr" class="form-label fw-bold">Account Number:<span class="required">*</span></label>
+                <input type="text" class="form-control" name="acno" formControlName="acno" id="accnmbr" required>
+            </div>
+            <div *ngIf="(this.registerForm.get('acno')?.touched||this.registerForm.get('acno')?.dirty)&&this.registerForm.get('acno')?.errors" class="error">
+                Invalid Account Number
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label fw-bold">EmailID:<span class="required">*</span></label>
+                <input type="email" class="form-control" id="Email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phnmbr" class="form-label fw-bold">Phone Number:<span class="required">*</span></label>
+                <input type="text" class="form-control" id="phnmbr" required>
+            </div>
+            <div class="mb-3">
+                <label for="Password" class="form-label fw-bold">Password:<span class="required">*</span></label>
+                <input type="password" class="form-control" name="pwd" formControlName="pwd" id="Password" required>
+            </div>
+            <div *ngIf="(this.registerForm.get('pwd')?.touched||this.registerForm.get('pwd')?.dirty)&&this.registerForm.get('pwd')?.errors" class="error">
+                Invalid Password
+            </div>
+            <button type="submit" class="btn btn-primary">REGISTER</button>
+            <!-- <a href="login" class="link-danger fs-5 ps-3">Already signed</a> -->
+            <!-- <button type="submit" class="btn btn-danger" (click)="login()">Already Login</button> -->
+        </fieldset>
+    </form>
+</div>
+
+
+<!-- Footer -->
+<footer style="padding-top: 100px;" class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-4 fw-bold">© 2021 Copyright
+        <a href="https://www.federalbank.co.in/"> federalbank.co.in</a>
+    </div>
+</footer>
